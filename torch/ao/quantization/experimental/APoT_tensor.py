@@ -2,13 +2,13 @@ import torch
 from torch.ao.quantization.experimental.quantizer import APoTQuantizer
 
 # class to store APoT quantized tensor
-class TensorAPoT(torch.Tensor):
+class TensorAPoT():
     quantizer: APoTQuantizer
-    data_reduced_precision_repr: torch.Tensor
-    data_int_repr: torch.Tensor
+    data: torch.Tensor
 
     def __init__(self, quantizer):
-        raise NotImplementedError
+        self.quantizer = quantizer
+        self.data = quantizer.data
 
     def int_repr(self):
-        raise NotImplementedError
+        return self.quantizer.data

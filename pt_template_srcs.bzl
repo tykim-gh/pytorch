@@ -3,7 +3,7 @@
 # being built
 
 load("@bazel_skylib//lib:paths.bzl", "paths")
-load("@fbsource//tools/build_defs:fbsource_utils.bzl", "is_arvr_mode")
+load("//tools/build_defs:fbsource_utils.bzl", "is_arvr_mode")
 load(":build_variables.bzl", "aten_native_source_list")
 load(
     ":ufunc_defs.bzl",
